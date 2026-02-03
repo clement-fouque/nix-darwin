@@ -38,13 +38,13 @@ Modular nix-darwin configuration for personal and professional MacBooks.
 For personal MacBook:
 
 ```sh
-darwin-rebuild switch --flake .#personal
+sudo darwin-rebuild switch --flake .#personal
 ```
 
 For professional MacBook:
 
 ```sh
-darwin-rebuild switch --flake .#professional
+sudo darwin-rebuild switch --flake .#professional
 ```
 
 ### Dynamic host detection (optional)
@@ -58,7 +58,7 @@ sudo scutil --set HostName personal
 sudo scutil --set HostName professional
 
 # Then rebuild with just:
-darwin-rebuild switch --flake .
+sudo darwin-rebuild switch --flake .
 ```
 
 ## Customization
@@ -85,11 +85,11 @@ darwin-rebuild switch --flake .
 nix flake update
 
 # Check what will change
-darwin-rebuild build --flake .#personal
+sudo darwin-rebuild build --flake .#personal
 
 # Apply changes
-darwin-rebuild switch --flake .#personal
+sudo darwin-rebuild switch --flake .#personal
 
 # Rollback to previous generation
-darwin-rebuild --rollback
+sudo darwin-rebuild --rollback
 ```

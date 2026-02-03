@@ -29,11 +29,5 @@
   {
     # Personal MacBook configuration
     darwinConfigurations."personal" = mkDarwinSystem "personal";
-
-    # Professional MacBook configuration  
-    darwinConfigurations."professional" = mkDarwinSystem "professional";
-
-    # Default configuration (points to personal)
-    darwinConfigurations.default = self.darwinConfigurations.personal;
   };
 }

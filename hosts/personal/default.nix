@@ -2,11 +2,14 @@
 
 {
   # Personal MacBook specific configuration
+
+  system.primaryUser = "hachou";
   
   # Personal-specific packages
   environment.systemPackages = with pkgs; [
     # Add personal tools here
     # Example: spotify, gaming tools, personal dev tools
+    ollama
   ];
 
   # Personal-specific settings
