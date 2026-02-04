@@ -12,6 +12,29 @@
     ollama
   ];
 
+  homebrew = {
+    enable = true;
+    onActivation = {
+      # Be carefull with this option as it'll remove what's not specified
+      cleanup = "zap";
+      autoUpdate = true;
+      upgrade = true;
+    };
+    global.autoUpdate = true;
+
+    brews = [
+      
+    ];
+
+    casks = [
+      "git-credential-manager"
+      "raycast"
+      "spotify"
+      "visual-studio-code"
+      "warp"
+    ];
+  };
+
   # Personal-specific settings
   # system.defaults.dock.tilesize = 48;
 
