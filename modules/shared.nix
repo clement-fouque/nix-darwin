@@ -3,16 +3,37 @@
 {
   # Shared packages across all hosts
   environment.systemPackages = with pkgs; [
-    jq
     git
+    jq
   ];
 
-  # Configure sudo with Touch ID
-  # security.pam.enableSudoTouchIdAuth = true;
+  homebrew = {
+    enable = true;
+    onActivation = {
+      # Be carefull with this option as it'll remove what's not specified
+      cleanup = "zap";
+      autoUpdate = true;
+      upgrade = true;
+    };
+    global.autoUpdate = true;
+
+    brews = [
+      "ollama"
+    ];
+
+    casks = [
+      "git-credential-manager"
+      "raycast"
+      "spotify"
+      "visual-studio-code"
+      "warp"
+    ];
+  };
 
   security.pam.services.sudo_local.touchIdAuth = true;
 
   # Additional shared macOS defaults
+  # https://nix-darwin.github.io/nix-darwin/manual/
   system.defaults = {
     dock = {
       autohide = true;
@@ -23,24 +44,24 @@
       AppleShowAllExtensions = true;
       FXEnableExtensionChangeWarning = false;
     };
-    
-  };
 
-  # https://nix-darwin.github.io/nix-darwin/manual/
-  system.defaults = {
-    NSGlobalDomain.NSDisableAutomaticTermination = false;
-    NSGlobalDomain.AppleInterfaceStyle = "Dark";
-    NSGlobalDomain.AppleICUForce24HourTime = true;
-    NSGlobalDomain.AppleMeasurementUnits = "Centimeters";
-    NSGlobalDomain.AppleShowAllExtensions = true;
-    NSGlobalDomain.AppleShowAllFiles = true;
-    NSGlobalDomain.NSDocumentSaveNewDocumentsToCloud = false;
-    loginwindow.GuestEnabled = false;
-    NSGlobalDomain.AppleShowScrollBars = "Always";
-    NSGlobalDomain."com.apple.swipescrolldirection" = true;
     # NSGlobalDomain."com.apple.trackpad.scaling" = 2;
-    SoftwareUpdate.AutomaticallyInstallMacOSUpdates = true;
     controlcenter.BatteryShowPercentage = true;
+    loginwindow.GuestEnabled = false;
+
+    NSGlobalDomain = {
+      "com.apple.swipescrolldirection" = true;
+      AppleICUForce24HourTime = true;
+      AppleInterfaceStyle = "Dark";
+      AppleMeasurementUnits = "Centimeters";
+      AppleShowAllExtensions = true;
+      AppleShowAllFiles = true;
+      AppleShowScrollBars = "Always";
+      NSDisableAutomaticTermination = false;
+      NSDocumentSaveNewDocumentsToCloud = false;
+    };
+
+    SoftwareUpdate.AutomaticallyInstallMacOSUpdates = true;
   };
 
   # Necessary for using flakes
