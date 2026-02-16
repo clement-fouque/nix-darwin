@@ -1,25 +1,20 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 
 {
   home.stateVersion = "24.05";
+  home.username = "hachou";
+  home.homeDirectory = lib.mkForce "/Users/hachou";
 
   programs.git = {
     enable = true;
     lfs.enable = true;
     settings = {
       user = {
-        email = "alexktz@gmail.com";
-        name = "Alex Kretzschmar";
+        email = "clement-fouque@users.noreply.github.com";
+        name = "clement-fouque";
       };
       init = {
         defaultBranch = "main";
-      };
-      merge = {
-        conflictStyle = "diff3";
-        tool = "meld";
-      };
-      pull = {
-        rebase = true;
       };
     };
   };

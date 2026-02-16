@@ -7,6 +7,8 @@
   environment.systemPackages = with pkgs; [
     git
     jq
+
+    vscode-extensions.jnoortheen.nix-ide
   ];
 
   homebrew = {
