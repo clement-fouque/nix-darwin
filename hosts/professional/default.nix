@@ -2,6 +2,8 @@
 
 {
   # Professional MacBook specific configuration
+
+  system.primaryUser = "clementfouque";
   
   # Work-specific packages
   environment.systemPackages = with pkgs; [
