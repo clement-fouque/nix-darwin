@@ -41,6 +41,6 @@
     darwinConfigurations."personal" = mkDarwinSystem "personal" "hachou";
 
     # Professional MacBook configuration
-    darwinConfigurations."professional" = mkDarwinSystem "professional" "clement";
+    darwinConfigurations."professional" = mkDarwinSystem "professional" "clementfouque";
   };
 }
