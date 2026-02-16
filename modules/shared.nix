@@ -1,6 +1,8 @@
 { pkgs, ... }:
 
 {
+  nixpkgs.config.allowUnfree = true;
+
   # Shared packages across all hosts
   environment.systemPackages = with pkgs; [
     git
@@ -18,11 +20,15 @@
     global.autoUpdate = true;
 
     brews = [
-      "ollama"
+      "ffmpeg"
+      "jq"
     ];
 
     casks = [
+      "brave-browser"
       "git-credential-manager"
+      "github"
+      "ollama-app"
       "raycast"
       "spotify"
       "visual-studio-code"

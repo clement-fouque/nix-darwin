@@ -7,9 +7,9 @@
   
   # Personal-specific packages
   environment.systemPackages = with pkgs; [
-    # Add personal tools here
-    # Example: spotify, gaming tools, personal dev tools
     ollama
+
+    vscode-extensions.pkief.material-icon-theme
   ];
 
   homebrew = {
@@ -27,16 +27,24 @@
     ];
 
     casks = [
-      "git-credential-manager"
-      "raycast"
-      "spotify"
-      "visual-studio-code"
-      "warp"
+      "proton-drive"
+      "synology-drive"
+      "vmware-fusion"
     ];
   };
 
+
+
   # Personal-specific settings
-  # system.defaults.dock.tilesize = 48;
+  system.defaults.dock = {
+    persistent-apps = [
+      "/Applications/Brave Browser.app"
+      "/Applications/Spotify.app"
+      "/Applications/GitHub Desktop.app"
+      "/Applications/Visual Studio Code.app"
+      "/Applications/Warp.app"
+    ];
+  };
 
   # Host platform
   nixpkgs.hostPlatform = "x86_64-darwin";

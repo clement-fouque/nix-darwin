@@ -29,5 +29,8 @@
   {
     # Personal MacBook configuration
     darwinConfigurations."personal" = mkDarwinSystem "personal";
+
+    # Professional MacBook configuration
+    darwinConfigurations."professional" = mkDarwinSystem "professional";
   };
 }
