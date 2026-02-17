@@ -7,9 +7,11 @@
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
+    
+    nix-homebrew.url = "github:zhaofengli-wip/nix-homebrew";
   };
 
-  outputs = inputs@{ self, nix-darwin, nixpkgs, home-manager }:
+  outputs = inputs@{ self, nix-darwin, nixpkgs, home-manager, nix-homebrew }:
   let
     # Helper function to create a system configuration
     mkDarwinSystem = hostname: username: nix-darwin.lib.darwinSystem {
@@ -26,6 +28,19 @@
           home-manager.useUserPackages = true;
           home-manager.users.${username} = import ./hosts/${hostname}/home-manager.nix;
           users.users.${username}.home = "/Users/${username}";
+        }
+
+        nix-homebrew.darwinModules.nix-homebrew
+        {
+          nix-homebrew = {
+            enable = true;
+            # Apple Silicon Only:
+            enableRosetta = true;
+            # User owning the Homebrew prefix
+            user = username;
+
+            autoMigrate = true;
+          };
         }
         
         # Set the hostname and configuration revision

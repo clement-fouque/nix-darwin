@@ -3,6 +3,11 @@
 {
   nixpkgs.config.allowUnfree = true;
 
+  # Add brew to the path
+  environment.variables = {
+    PATH = "/opt/homebrew/bin:/opt/homebrew/sbin:$PATH";
+  };
+
   # Shared packages across all hosts
   environment.systemPackages = with pkgs; [
     git
