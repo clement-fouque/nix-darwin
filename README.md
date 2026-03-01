@@ -28,9 +28,9 @@ Modular nix-darwin configuration for personal and professional MacBooks.
 ### First-time setup
 
 1. Install Nix with flakes support
-2. Install nix-darwin:
+2. Apply the configuration (the `darwin-rebuild` command is not available until after the first run):
    ```sh
-   nix run nix-darwin -- switch --flake .#personal
+   sudo nix run nix-darwin --extra-experimental-features "nix-command flakes" -- switch --flake .#professional
    ```
 
 ### Switching configurations
