@@ -1,9 +1,9 @@
-{ pkgs, ... }:
+{ pkgs, username, ... }:
 
 {
   # Personal MacBook specific configuration
 
-  system.primaryUser = "hachou";
+  system.primaryUser = username;
   
   # Personal-specific packages
   environment.systemPackages = with pkgs; [

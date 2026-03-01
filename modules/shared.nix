@@ -54,8 +54,15 @@
     };
 
     finder = {
+      _FXSortFoldersFirst = true;
       AppleShowAllExtensions = true;
+      FXDefaultSearchScope = "SCcf"; # When performing a search, search the current folder by default
       FXEnableExtensionChangeWarning = false;
+      FXPreferredViewStyle  = "clmv";
+      NewWindowTarget = "Home";
+      ShowExternalHardDrivesOnDesktop = true;
+      ShowPathbar = true;
+      ShowStatusBar = true;
     };
 
     # NSGlobalDomain."com.apple.trackpad.scaling" = 2;
@@ -63,7 +70,7 @@
     loginwindow.GuestEnabled = false;
 
     NSGlobalDomain = {
-      "com.apple.swipescrolldirection" = true;
+      "com.apple.swipescrolldirection" = false;
       AppleICUForce24HourTime = true;
       AppleInterfaceStyle = "Dark";
       AppleMeasurementUnits = "Centimeters";
@@ -73,6 +80,8 @@
       NSDisableAutomaticTermination = false;
       NSDocumentSaveNewDocumentsToCloud = false;
     };
+
+    screencapture.target = "preview";
 
     SoftwareUpdate.AutomaticallyInstallMacOSUpdates = true;
   };

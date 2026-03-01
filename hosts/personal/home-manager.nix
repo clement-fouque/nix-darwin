@@ -1,9 +1,9 @@
-{ pkgs, lib, ... }:
+{ pkgs, lib, username, ... }:
 
 {
   home.stateVersion = "24.05";
-  home.username = "hachou";
-  home.homeDirectory = lib.mkForce "/Users/hachou";
+  home.username = username;
+  home.homeDirectory = lib.mkForce "/Users/${username}";
 
   programs.git = {
     enable = true;

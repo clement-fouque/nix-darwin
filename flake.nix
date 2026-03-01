@@ -15,6 +15,7 @@
   let
     # Helper function to create a system configuration
     mkDarwinSystem = hostname: username: nix-darwin.lib.darwinSystem {
+      specialArgs = { inherit username; };
       modules = [
         # Shared configuration
         ./modules/shared.nix
@@ -26,6 +27,7 @@
         home-manager.darwinModules.home-manager {
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
+          home-manager.extraSpecialArgs = { inherit username; };
           home-manager.users.${username} = import ./hosts/${hostname}/home-manager.nix;
           users.users.${username}.home = "/Users/${username}";
         }
