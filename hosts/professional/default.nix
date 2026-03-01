@@ -4,18 +4,6 @@
   # Professional MacBook specific configuration
 
   system.primaryUser = username;
-  
-  # Work-specific packages
-  environment.systemPackages = with pkgs; [
-    gemini-cli
-    gh
-    go
-    # vscode-extensions.pkief.material-icon-theme
-    # vscode-extensions.ms-vscode-remote.remote-containers
-    # vscode-extensions.ms-python.python
-    # vscode-extensions.github.vscode-pull-request-github
-    # vscode-extensions.github.vscode-github-actions
-  ];
 
   homebrew = {
     enable = true;
@@ -28,6 +16,9 @@
     global.autoUpdate = true;
 
     brews = [
+      "gemini-cli"
+      "gh"
+      "go"
       "lastpass-cli"
     ];
 
