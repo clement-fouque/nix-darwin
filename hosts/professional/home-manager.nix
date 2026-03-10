@@ -5,6 +5,8 @@
   home.username = username;
   home.homeDirectory = lib.mkForce "/Users/${username}";
 
+  programs.zsh.enable = true;
+
   home.sessionPath = [
     "$HOME/go/bin"
   ];
