@@ -17,6 +17,7 @@
       run go install ${pkg}
     '') [
       "github.com/elastic/elastic-package@latest"
+      "github.com/elastic/mito/cmd/mito@latest"
     ])}
   '';
 }
