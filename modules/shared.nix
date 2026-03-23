@@ -38,6 +38,7 @@
       "ollama-app"
       "raycast"
       "spotify"
+      "superwhisper"
       "visual-studio-code"
       "warp"
     ];
