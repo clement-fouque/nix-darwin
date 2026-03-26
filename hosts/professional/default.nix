@@ -25,6 +25,8 @@
     casks = [
       "bruno"
       "burp-suite"
+      "claude"
+      "claude-code"
       "cursor"
       "docker-desktop"
       "google-chrome"
