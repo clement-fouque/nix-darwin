@@ -14,6 +14,7 @@
     jq
 
     vscode-extensions.jnoortheen.nix-ide
+    yq
   ];
 
   homebrew = {
