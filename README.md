@@ -89,6 +89,7 @@ sudo darwin-rebuild build --flake .#personal
 
 # Apply changes
 sudo darwin-rebuild switch --flake .#personal
+sudo darwin-rebuild switch --flake .#professional
 
 # Rollback to previous generation
 sudo darwin-rebuild --rollback
