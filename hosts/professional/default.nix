@@ -20,6 +20,7 @@
       "gh"
       "go"
       "lastpass-cli"
+      "teleport"
     ];
 
     casks = [
