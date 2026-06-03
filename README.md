@@ -86,6 +86,7 @@ nix flake update
 
 # Check what will change
 sudo darwin-rebuild build --flake .#personal
+sudo darwin-rebuild build --flake .#professional
 
 # Apply changes
 sudo darwin-rebuild switch --flake .#personal
