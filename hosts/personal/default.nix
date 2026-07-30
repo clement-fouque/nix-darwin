@@ -29,7 +29,6 @@
     casks = [
       "proton-drive"
       "synology-drive"
-      "vmware-fusion"
     ];
   };
 
