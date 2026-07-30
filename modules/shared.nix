@@ -34,12 +34,12 @@
 
     casks = [
       "brave-browser"
+      "cursor"
       "git-credential-manager"
       "github"
       "ollama-app"
       "raycast"
       "spotify"
-      "superwhisper"
       "visual-studio-code"
       "warp"
     ];
