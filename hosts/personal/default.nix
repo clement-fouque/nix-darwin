@@ -29,6 +29,7 @@
     casks = [
       "proton-drive"
       "synology-drive"
+      "virtualbox"
     ];
   };
 
