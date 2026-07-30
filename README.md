@@ -27,11 +27,35 @@ Modular nix-darwin configuration for personal and professional MacBooks.
 
 ### First-time setup
 
-1. Install Nix with flakes support
-2. Apply the configuration (the `darwin-rebuild` command is not available until after the first run):
+1. Install Xcode Command Line Tools:
    ```sh
-   sudo nix run nix-darwin --extra-experimental-features "nix-command flakes" -- switch --flake .#professional
+   xcode-select --install
    ```
+2. Create the project directory and enter it:
+   ```sh
+   mkdir -p ~/project/github/clement-fouque
+   cd ~/project/github/clement-fouque
+   ```
+3. Clone the repository and enter it:
+   ```sh
+   git clone https://github.com/clement-fouque/nix-darwin
+   cd nix-darwin
+   ```
+4. Install Nix ([docs](https://nixos.org/download/)), for example:
+   ```sh
+   curl --proto '=https' --tlsv1.2 -L https://nixos.org/nix/install | sh
+   ```
+5. Open a new terminal (or reload your shell) so `nix` is on your `PATH`.
+6. Apply the configuration. Choose the flake that matches this machine.
+   **Warning:** both hosts enable Homebrew `cleanup = "zap"`, which may remove undeclared Homebrew packages/casks. Only run this on a machine you are OK managing via this flake.
+   ```sh
+   # Professional MacBook
+   sudo nix run nix-darwin --extra-experimental-features "nix-command flakes" -- switch --flake .#professional
+
+   # Personal MacBook
+   sudo nix run nix-darwin --extra-experimental-features "nix-command flakes" -- switch --flake .#personal
+   ```
+   The `darwin-rebuild` command is not available until after the first run; afterwards, use it as in [Switching configurations](#switching-configurations) below.
 
 ### Switching configurations
 
