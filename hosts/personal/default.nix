@@ -43,6 +43,7 @@
       "/Applications/GitHub Desktop.app"
       "/Applications/Visual Studio Code.app"
       "/Applications/Warp.app"
+      "/Applications/Cloudflare WARP.app"
     ];
   };
 
