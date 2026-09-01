@@ -16,7 +16,6 @@
     global.autoUpdate = true;
 
     brews = [
-      "gemini-cli"
       "gh"
       "go"
       "lastpass-cli"
@@ -30,6 +29,7 @@
       "claude-code"
       "cursor"
       "docker-desktop"
+      "gcloud-cli"
       "google-chrome"
       "keybase"
       "lastpass"
