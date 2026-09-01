@@ -106,7 +106,7 @@ sudo darwin-rebuild switch --flake .
 
 ```sh
 # Update flake inputs
-nix flake update
+sudo nix flake update
 
 # Check what will change
 sudo darwin-rebuild build --flake .#personal
