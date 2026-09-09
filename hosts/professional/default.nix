@@ -18,6 +18,7 @@
     brews = [
       "gh"
       "go"
+      "node"
       "lastpass-cli"
       "teleport"
     ];
