@@ -31,6 +31,7 @@
       "cursor"
       "docker-desktop"
       "gcloud-cli"
+      "github-copilot-app"
       "google-chrome"
       "keybase"
       "lastpass"
