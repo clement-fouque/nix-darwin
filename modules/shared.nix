@@ -37,6 +37,7 @@
       "cursor"
       "git-credential-manager"
       "github"
+      "handy"
       "ollama-app"
       "raycast"
       "spotify"
