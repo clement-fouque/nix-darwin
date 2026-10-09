@@ -27,6 +27,7 @@
     ];
 
     casks = [
+      "github-copilot-app"
       "proton-drive"
       "synology-drive"
     ];
