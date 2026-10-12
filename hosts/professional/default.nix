@@ -19,8 +19,7 @@
       "gh"
       "go"
       "node"
-      "lastpass-cli"
-      "teleport"
+      "opentofu"
     ];
 
     casks = [
