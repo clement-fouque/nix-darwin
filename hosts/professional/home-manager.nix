@@ -13,12 +13,14 @@
     [ -f "$HOME/.elastic-package/serverless.env" ] && source "$HOME/.elastic-package/serverless.env"
   '';
 
-  # Create an empty private placeholder once; never overwrite an existing file.
+  # Create a private placeholder with the variable name once; never overwrite an existing file.
   home.activation.createServerlessEnv = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
     target="$HOME/.elastic-package/serverless.env"
     if [ ! -e "$target" ]; then
       run mkdir -p "$HOME/.elastic-package"
-      (umask 077 && run touch "$target")
+      if [ -z "''${DRY_RUN:-}" ]; then
+        (umask 077 && echo 'export EC_API_KEY=' > "$target")
+      fi
     fi
   '';
 
