@@ -9,8 +9,13 @@
 
   # Written to ~/.zshenv (read by every zsh, including non-interactive ones).
   # The secret file is user-managed and never enters the repo or the nix store.
+  # set -a exports every assignment, so plain KEY=value lines reach child processes.
   programs.zsh.envExtra = ''
-    [ -f "$HOME/.elastic-package/serverless.env" ] && source "$HOME/.elastic-package/serverless.env"
+    if [ -f "$HOME/.elastic-package/serverless.env" ]; then
+      set -a
+      source "$HOME/.elastic-package/serverless.env"
+      set +a
+    fi
   '';
 
   # Create a private placeholder with the variable name once; never overwrite an existing file.
