@@ -85,6 +85,14 @@ sudo scutil --set HostName professional
 sudo darwin-rebuild switch --flake .
 ```
 
+## Serverless API key (professional)
+
+`~/.zshenv` (managed by home-manager on the professional host) sources `~/.elastic-package/serverless.env`, so every shell, including non-interactive ones, gets `EC_API_KEY`. The file is not in this repo: the first switch creates it empty (mode 600) if missing, then add your key (it is never overwritten):
+
+```sh
+echo 'export EC_API_KEY=...' > ~/.elastic-package/serverless.env
+```
+
 ## Customization
 
 ### Adding packages
