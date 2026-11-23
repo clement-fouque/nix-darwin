@@ -16,6 +16,7 @@
       source "$HOME/.elastic-package/serverless.env"
       set +a
     fi
+    export ELASTIC_PACKAGE_SERVERLESS_KIBANA_SKIP_UPLOAD_PACKAGE_VALIDATION=true
   '';
 
   # Create a private placeholder with the variable name once; never overwrite an existing file.
