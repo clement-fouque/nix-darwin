@@ -7,6 +7,12 @@
 
   programs.zsh.enable = true;
 
+  programs.zsh.initContent = ''
+    elastic-package-serverless-qa() {
+      ELASTIC_PACKAGE_SERVERLESS_KIBANA_SKIP_UPLOAD_PACKAGE_VALIDATION=true command elastic-package "$@"
+    }
+  '';
+
   # Written to ~/.zshenv (read by every zsh, including non-interactive ones).
   # The secret file is user-managed and never enters the repo or the nix store.
   # set -a exports every assignment, so plain KEY=value lines reach child processes.

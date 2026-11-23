@@ -93,7 +93,7 @@ sudo darwin-rebuild switch --flake .
 echo 'export EC_API_KEY=...' > ~/.elastic-package/serverless.env
 ```
 
-For Elastic Serverless QA project creation only, opt in by setting `ELASTIC_PACKAGE_SERVERLESS_KIBANA_SKIP_UPLOAD_PACKAGE_VALIDATION=true` inline on that `elastic-package` command. Do not export it or add it to `~/.elastic-package/serverless.env`: the inline setting applies only to that command and its child processes, so normal shells and production commands remain unaffected.
+After applying the professional configuration and opening a new zsh session, use the `elastic-package-serverless-qa` helper followed by the usual `elastic-package` arguments for Elastic Serverless QA project creation only. It sets `ELASTIC_PACKAGE_SERVERLESS_KIBANA_SKIP_UPLOAD_PACKAGE_VALIDATION=true` only for that invocation and its child processes; normal shells and production `elastic-package` commands remain unaffected. Do not export the variable or add it to `~/.elastic-package/serverless.env`.
 
 ## Customization
 
