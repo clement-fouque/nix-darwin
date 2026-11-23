@@ -93,6 +93,8 @@ sudo darwin-rebuild switch --flake .
 echo 'export EC_API_KEY=...' > ~/.elastic-package/serverless.env
 ```
 
+The professional Home Manager session also sets `ELASTIC_PACKAGE_SERVERLESS_KIBANA_SKIP_UPLOAD_PACKAGE_VALIDATION=true` for Elastic Serverless QA project creation. It is available in new shell sessions after switching the configuration; use this setting only for QA projects.
+
 ## Customization
 
 ### Adding packages

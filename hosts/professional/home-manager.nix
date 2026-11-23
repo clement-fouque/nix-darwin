@@ -5,6 +5,9 @@
   home.username = username;
   home.homeDirectory = lib.mkForce "/Users/${username}";
 
+  # Use only when creating Elastic Serverless QA projects.
+  home.sessionVariables.ELASTIC_PACKAGE_SERVERLESS_KIBANA_SKIP_UPLOAD_PACKAGE_VALIDATION = "true";
+
   programs.zsh.enable = true;
 
   # Written to ~/.zshenv (read by every zsh, including non-interactive ones).
